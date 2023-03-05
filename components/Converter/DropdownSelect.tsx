@@ -32,7 +32,17 @@ const DropdownSelect = () => {
         optionLabelProp="label"
         size="large"
       >
-        <Option value="china" label="China">
+        <Option
+          value="china"
+          label={
+            <Space>
+              <span role="img" aria-label="China">
+                <span className="fi fi-cn"></span>
+              </span>
+              China (中国)
+            </Space>
+          }
+        >
           <Space>
             <span role="img" aria-label="China">
               <span className="fi fi-cn"></span>
