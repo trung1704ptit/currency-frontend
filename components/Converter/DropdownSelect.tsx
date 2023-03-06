@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { InputWrapper } from './style';
 import { Select, Space } from 'antd';
 import Text from 'antd/lib/typography/Text';
+import { currencyAndSymbol } from '../../utils/currencyAndSymbol';
 
 const { Option } = Select;
 
@@ -19,6 +20,7 @@ const DropdownSelect = () => {
   const onSearch = (value: string) => {
     console.log('search:', value);
   };
+
   return (
     <InputWrapper>
       <Text strong>From</Text>
@@ -27,53 +29,39 @@ const DropdownSelect = () => {
         showSearch
         style={{ width: '100%' }}
         placeholder="select one country"
-        defaultValue={['china']}
+        defaultValue={['USD']}
         onChange={handleChange}
         optionLabelProp="label"
         size="large"
       >
-        <Option
-          value="china"
-          label={
+        {currencyAndSymbol.map((item) => (
+          <Option
+            value={item.ISOCode + item.CountryName}
+            key={item.ISOCode + item.CountryName}
+            label={
+              <Space>
+                <span role="img" aria-label={item.CountryName}>
+                  <span
+                    className={`fi fi-${item.ISOCode.slice(
+                      0,
+                      2,
+                    ).toLowerCase()}`}
+                  ></span>
+                </span>
+                {item.ISOCode} - {item.Currency}
+              </Space>
+            }
+          >
             <Space>
-              <span role="img" aria-label="China">
-                <span className="fi fi-cn"></span>
+              <span role="img" aria-label={item.CountryName}>
+                <span
+                  className={`fi fi-${item.ISOCode.slice(0, 2).toLowerCase()}`}
+                ></span>
               </span>
-              China (中国)
+              {item.ISOCode} - {item.Currency}
             </Space>
-          }
-        >
-          <Space>
-            <span role="img" aria-label="China">
-              <span className="fi fi-cn"></span>
-            </span>
-            China (中国)
-          </Space>
-        </Option>
-        <Option value="usa" label="USA">
-          <Space>
-            <span role="img" aria-label="USA">
-              🇺🇸
-            </span>
-            USA (美国)
-          </Space>
-        </Option>
-        <Option value="japan" label="Japan">
-          <Space>
-            <span role="img" aria-label="Japan">
-              🇯🇵
-            </span>
-            Japan (日本)
-          </Space>
-        </Option>
-        <Option value="korea" label="Korea">
-          <Space>
-            <span role="img" aria-label="Korea">
-              🇰🇷
-            </span>
-            Korea (韩国)
-          </Space>
-        </Option>
+          </Option>
+        ))}
       </Select>
     </InputWrapper>
   );

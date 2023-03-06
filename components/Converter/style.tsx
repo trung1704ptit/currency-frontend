@@ -36,11 +36,7 @@ export const Section = styled.div`
   max-width: 1200px px;
   position: relative;
   margin: 100px 0;
-  padding: 32px 16px;
   & div {
     margin: 0 auto;
-  }
-  @media only screen and (min-width: 768px) {
-    padding: 0;
   }
 `;
