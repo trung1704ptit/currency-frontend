@@ -1,5 +1,26 @@
 export const currencyAndSymbol = [
   {
+    CountryName: 'Euro Member Countries',
+    ISOCode: 'EUR',
+    Currency: 'Euro',
+    Symbol: '€',
+    Presented: true,
+  },
+  {
+    CountryName: 'US Dollar',
+    ISOCode: 'USD',
+    Currency: 'United States dollar',
+    Symbol: '$',
+    Presented: true,
+  },
+  {
+    CountryName: 'Central African CFA Franc BEAC',
+    ISOCode: 'XAF',
+    Currency: 'Central African CFA Franc BEAC',
+    Symbol: 'FCFA',
+    Presented: true,
+  },
+  {
     CountryName: 'Afghanistan',
     ISOCode: 'AFN',
     Currency: 'Afghan afghani',
