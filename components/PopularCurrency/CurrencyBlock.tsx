@@ -1,11 +1,9 @@
-/* eslint-disable import/no-extraneous-dependencies */
-// import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useEffect, useState } from 'react';
+import { ReactElement, useEffect, useState } from 'react';
 import { io } from 'socket.io-client';
 import {
   ArrowRightOutlined
 } from '@ant-design/icons';
+import { ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons';
 
 import {
   CurrencyBlockWrapper,
@@ -35,10 +33,13 @@ const CurrencyBlock = ({ pairName }: CurrencyInputType) => {
 
   if (data) {
     let dayChangedStatus: string = 'unset';
+    let dayChangedStatusIcon: ReactElement = null;
     if (data.dayChangedStatus === '+') {
       dayChangedStatus = 'green';
+      dayChangedStatusIcon = <ArrowUpOutlined />
     } else if (data.dayChangedStatus === '-') {
       dayChangedStatus = 'red';
+      dayChangedStatusIcon = <ArrowDownOutlined />
     }
     return (
       <CurrencyBlockWrapper>
@@ -58,7 +59,7 @@ const CurrencyBlock = ({ pairName }: CurrencyInputType) => {
         </CurrencyPrice>
 
         <CurrencyChanged changedStatus={dayChangedStatus}>
-          {data.dayChangedStatus}
+          {dayChangedStatusIcon}
           {data.dayChanged} ({data.dayChangedByPercent}%){' '}
           <DailyText>Daily</DailyText>
         </CurrencyChanged>

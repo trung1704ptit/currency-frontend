@@ -7,6 +7,9 @@ const nextConfig = {
   webpack: (config) => {
     return config;
   },
+  experimental: {
+    outputStandalone: true,
+  },
 };
 
 module.exports = withAntdLess(nextConfig);

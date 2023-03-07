@@ -1,14 +1,9 @@
-.App-logo {
-  height: 30px;
-  background: rgba(255, 255, 255, 0.575);
-  margin: 15px;
-}
-
 body,
 html {
   font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
+  background: #f0f2f554;
 }
 
 html,

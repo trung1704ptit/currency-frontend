@@ -4,26 +4,31 @@ import { InputWrapper } from './style';
 import { Select, Space } from 'antd';
 import Text from 'antd/lib/typography/Text';
 import { currencyAndSymbol } from '../../utils/currencyAndSymbol';
+import { IDropdownType } from './types';
 
 const { Option } = Select;
 
 const handleChange = (value: string[]) => {
   console.log(`selected ${value}`);
 };
-const DropdownSelect = () => {
-  const [currentValue, setCurrentValue] = useState('');
 
-  const onChange = (value: string) => {
-    console.log(`selected ${value}`);
-  };
+const SelectItem = ({ item }) => {
+  return (
+    <Space>
+      <span role="img" aria-label={item.CountryName}>
+        <span
+          className={`fi fi-${item.ISOCode.slice(0, 2).toLowerCase()}`}
+        ></span>
+      </span>
+      {item.ISOCode} - {item.Currency}
+    </Space>
+  );
+};
 
-  const onSearch = (value: string) => {
-    console.log('search:', value);
-  };
-
+const DropdownSelect = (props: IDropdownType) => {
   return (
     <InputWrapper>
-      <Text strong>From</Text>
+      <Text strong>{props.label}</Text>
 
       <Select
         showSearch
@@ -38,28 +43,10 @@ const DropdownSelect = () => {
           <Option
             value={item.ISOCode + item.CountryName}
             key={item.ISOCode + item.CountryName}
-            label={
-              <Space>
-                <span role="img" aria-label={item.CountryName}>
-                  <span
-                    className={`fi fi-${item.ISOCode.slice(
-                      0,
-                      2,
-                    ).toLowerCase()}`}
-                  ></span>
-                </span>
-                {item.ISOCode} - {item.Currency}
-              </Space>
-            }
+            label={<SelectItem item={item} />}
+            style={{ minHeight: '45px', lineHeight: '34px'}}
           >
-            <Space>
-              <span role="img" aria-label={item.CountryName}>
-                <span
-                  className={`fi fi-${item.ISOCode.slice(0, 2).toLowerCase()}`}
-                ></span>
-              </span>
-              {item.ISOCode} - {item.Currency}
-            </Space>
+            <SelectItem item={item} />
           </Option>
         ))}
       </Select>

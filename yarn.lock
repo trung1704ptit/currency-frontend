@@ -1860,7 +1860,7 @@
   "resolved" "https://registry.npmjs.org/string-convert/-/string-convert-0.2.1.tgz"
   "version" "0.2.1"
 
-"styled-components@>= 2":
+"styled-components@^5.3.8", "styled-components@>= 2":
   "integrity" "sha512-6jQrlvaJQ16uWVVO0rBfApaTPItkqaG32l3746enNZzpMDxMvzmHzj8rHUg39bvVtom0Y8o8ZzWuchEXKGjVsg=="
   "resolved" "https://registry.npmjs.org/styled-components/-/styled-components-5.3.8.tgz"
   "version" "5.3.8"
