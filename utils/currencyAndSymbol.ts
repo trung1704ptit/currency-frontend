@@ -1,4 +1,4 @@
-export const currencyAndSymbol = [
+export const countryCurrencyList = [
   {
     CountryName: 'Euro Member Countries',
     ISOCode: 'EUR',
@@ -7,7 +7,7 @@ export const currencyAndSymbol = [
     Presented: true,
   },
   {
-    CountryName: 'US Dollar',
+    CountryName: 'United States',
     ISOCode: 'USD',
     Currency: 'United States dollar',
     Symbol: '$',

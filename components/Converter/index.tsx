@@ -15,11 +15,11 @@ const Converter = () => {
               <AmountInput />
             </Col>
             <Col md={8} xs={24}>
-              <DropdownSelect label="From" />
+              <DropdownSelect label="From" defaultValue="USD_United States"/>
             </Col>
 
             <Col md={8} xs={24}>
-              <DropdownSelect label="To" />
+              <DropdownSelect label="To" defaultValue="EUR_Euro Member Countries"/>
             </Col>
           </Row>
           <ConvertButtonWrapper>
