@@ -1,50 +1,28 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import styled from 'styled-components';
 
-export const BurgerButton = styled.div`
-  border-top: 2px solid #f85051;
-  height: 25px;
-  width: 30px;
-  box-sizing: border-box;
-  position: absolute;
-  z-index: 30;
-  right: 20px;
-  top: 15px;
-  cursor: pointer;
-  -webkit-transition: all 0.3s ease-in;
-  -moz-transition: all 0.3s ease-in;
-  -khtml-transition: all 0.3s ease-in;
-  -o-transition: all 0.3s ease-in;
-  transition: all 0.3s ease-in;
-
-  &:before {
-    content: '';
-    display: block;
-    position: absolute;
-    height: 2px;
-    width: 30px;
-    left: 0;
-    background: #f85051;
-    top: 10px;
-    -webkit-transition: all 0.3s ease-in;
-    -moz-transition: all 0.3s ease-in;
-    -khtml-transition: all 0.3s ease-in;
-    -o-transition: all 0.3s ease-in;
-    transition: all 0.3s ease-in;
-  }
-  &:after {
-    content: '';
-    display: block;
-    position: absolute;
-    height: 2px;
-    width: 30px;
-    left: 0;
-    background: #f85051;
-    bottom: 0;
-    -webkit-transition: all 0.3s ease-in;
-    -moz-transition: all 0.3s ease-in;
-    -khtml-transition: all 0.3s ease-in;
-    -o-transition: all 0.3s ease-in;
-    transition: all 0.3s ease-in;
-  }
+export const HeaderWrapper = styled.div`
+  padding: 20px 0;
 `;
+
+export const HeaderInner = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`
+
+export const Logo = styled.div`
+  img {
+    width: 120px;
+  }
+  @media only screen and (min-width: 768px) {
+    img {
+      width: 140px;
+    }
+  }
+`
+
+export const RightSide = styled.div`
+  a {
+    font-size: 20px
+  }
+`

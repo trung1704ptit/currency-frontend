@@ -43,10 +43,12 @@ export const InputWrapper = styled.div`
 `;
 
 export const Section = styled.div`
-  margin: 0px auto;
   max-width: 1200px px;
   position: relative;
-  margin: 100px 0;
+  padding: 70px 0;
+  @media only screen and (min-width: 768px) {
+    padding: 120px 0px;
+  }
 `;
 
 export const ConvertButtonWrapper = styled.div`

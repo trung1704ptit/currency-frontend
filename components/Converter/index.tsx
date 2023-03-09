@@ -2,7 +2,7 @@ import { Row, Col, Button } from 'antd';
 
 import Container from '../Container';
 import AmountInput from './AmountInput';
-import DropdownSelect from './DropdownSelect';
+import DropdownSelect from '../CurrencyDropdownSelect';
 import { ConvertButtonWrapper, Section, Wrapper, Tooltip, ConvertButtonWrap } from './style';
 
 const Converter = () => {

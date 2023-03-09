@@ -27,3 +27,5 @@ yarn dev
 yarn build
 yarn start
 ```
+
+https://levelup.gitconnected.com/lets-create-a-project-with-nextjs-antd-and-deploy-with-now-sh-e38772348312
