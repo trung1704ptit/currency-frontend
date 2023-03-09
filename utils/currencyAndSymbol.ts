@@ -1,5 +1,12 @@
 export const countryCurrencyList = [
   {
+    CountryName: 'United States',
+    ISOCode: 'USD',
+    Currency: 'United States Dollar',
+    Symbol: '$',
+    Presented: true,
+  },
+  {
     CountryName: 'Euro Member Countries',
     ISOCode: 'EUR',
     Currency: 'Euro',
@@ -7,11 +14,88 @@ export const countryCurrencyList = [
     Presented: true,
   },
   {
-    CountryName: 'United States',
-    ISOCode: 'USD',
-    Currency: 'United States Dollar',
+    CountryName: 'United Kingdom',
+    ISOCode: 'GBP',
+    Currency: 'British Pound',
+    Symbol: '£',
+  },
+  {
+    CountryName: 'Canada',
+    ISOCode: 'CAD',
+    Currency: 'Canadian Dollar',
     Symbol: '$',
-    Presented: true,
+  },
+  {
+    CountryName: 'Australia',
+    ISOCode: 'AUD',
+    Currency: 'Australian Dollar',
+    Symbol: '$',
+  },
+  {
+    CountryName: 'Japan',
+    ISOCode: 'JPY',
+    Currency: 'Japanese Yen',
+    Symbol: '¥',
+  },
+  {
+    CountryName: 'India',
+    ISOCode: 'INR',
+    Currency: 'Indian Rupee',
+    Symbol: '₹',
+  },
+  {
+    CountryName: 'China',
+    ISOCode: 'CNY',
+    Currency: 'Chinese Yuan',
+    Symbol: '¥',
+  },
+  {
+    CountryName: 'Brazil',
+    ISOCode: 'BRL',
+    Currency: 'Brazilian Real',
+    Symbol: 'R$',
+  },
+  {
+    CountryName: 'Singapore',
+    ISOCode: 'SGD',
+    Currency: 'Singapore Dollar',
+    Symbol: '$',
+  },
+  {
+    CountryName: 'Russia',
+    ISOCode: 'RUB',
+    Currency: 'Russian Ruble',
+    Symbol: '₽',
+  },
+  {
+    CountryName: 'Vietnam',
+    ISOCode: 'VND',
+    Currency: 'Vietnamese Dong',
+    Symbol: '₫',
+  },
+  {
+    CountryName: 'Korea, South',
+    ISOCode: 'KRW',
+    Currency: 'South Korean Won',
+    Symbol: '₩',
+  },
+  {
+    CountryName: 'Hong Kong',
+    ISOCode: 'HKD',
+    Currency: 'Hong Kong Dollar',
+    Symbol: '$',
+  },
+  {
+    CountryName: 'Sweden',
+    ISOCode: 'SEK',
+    Currency: 'Swedish Krona',
+    Symbol: 'kr',
+  },
+  {
+    CountryName: 'Switzerland',
+    ISOCode: 'CHF',
+    Currency: 'Swiss Franc',
+    Symbol: 'CHF',
   },
   {
     CountryName: 'Central African CFA Franc BEAC',
@@ -67,12 +151,6 @@ export const countryCurrencyList = [
     ISOCode: 'AMD',
     Currency: 'Armenian Dram',
     Symbol: '֏',
-  },
-  {
-    CountryName: 'Australia',
-    ISOCode: 'AUD',
-    Currency: 'Australian Dollar',
-    Symbol: '$',
   },
   {
     CountryName: 'Austria',
@@ -159,12 +237,6 @@ export const countryCurrencyList = [
     Symbol: 'P',
   },
   {
-    CountryName: 'Brazil',
-    ISOCode: 'BRL',
-    Currency: 'Brazilian Real',
-    Symbol: 'R$',
-  },
-  {
     CountryName: 'Brunei',
     ISOCode: 'BND',
     Currency: 'Brunei Dollar',
@@ -201,12 +273,6 @@ export const countryCurrencyList = [
     Symbol: 'FCFA',
   },
   {
-    CountryName: 'Canada',
-    ISOCode: 'CAD',
-    Currency: 'Canadian Dollar',
-    Symbol: '$',
-  },
-  {
     CountryName: 'Cape Verde',
     ISOCode: 'CVE',
     Currency: 'Cape Verdean Escudo',
@@ -229,12 +295,6 @@ export const countryCurrencyList = [
     ISOCode: 'CLP',
     Currency: 'Chilean Peso',
     Symbol: '$',
-  },
-  {
-    CountryName: 'China',
-    ISOCode: 'CNY',
-    Currency: 'Chinese Yuan',
-    Symbol: '¥',
   },
   {
     CountryName: 'Colombia',
@@ -471,12 +531,6 @@ export const countryCurrencyList = [
     Symbol: 'kr',
   },
   {
-    CountryName: 'India',
-    ISOCode: 'INR',
-    Currency: 'Indian Rupee',
-    Symbol: '₹',
-  },
-  {
     CountryName: 'Indonesia',
     ISOCode: 'IDR',
     Currency: 'Indonesian Rupiah',
@@ -525,12 +579,6 @@ export const countryCurrencyList = [
     Symbol: 'J$',
   },
   {
-    CountryName: 'Japan',
-    ISOCode: 'JPY',
-    Currency: 'Japanese Yen',
-    Symbol: '¥',
-  },
-  {
     CountryName: 'Jordan',
     ISOCode: 'JOD',
     Currency: 'Jordanian Dinar',
@@ -558,12 +606,6 @@ export const countryCurrencyList = [
     CountryName: 'Korea, North',
     ISOCode: 'KPW',
     Currency: 'North Korean Won',
-    Symbol: '₩',
-  },
-  {
-    CountryName: 'Korea, South',
-    ISOCode: 'KRW',
-    Currency: 'South Korean Won',
     Symbol: '₩',
   },
   {
@@ -891,12 +933,6 @@ export const countryCurrencyList = [
     Symbol: 'lei',
   },
   {
-    CountryName: 'Russia',
-    ISOCode: 'RUB',
-    Currency: 'Russian Ruble',
-    Symbol: '₽',
-  },
-  {
     CountryName: 'Rwanda',
     ISOCode: 'RWF',
     Currency: 'Rwandan Franc',
@@ -969,12 +1005,6 @@ export const countryCurrencyList = [
     Symbol: 'Le',
   },
   {
-    CountryName: 'Singapore',
-    ISOCode: 'SGD',
-    Currency: 'Singapore Dollar',
-    Symbol: '$',
-  },
-  {
     CountryName: 'Slovakia',
     ISOCode: 'EUR',
     Currency: 'Euro',
@@ -1033,18 +1063,6 @@ export const countryCurrencyList = [
     ISOCode: 'SRD',
     Currency: 'Surinamese Dollar',
     Symbol: '$',
-  },
-  {
-    CountryName: 'Sweden',
-    ISOCode: 'SEK',
-    Currency: 'Swedish Krona',
-    Symbol: 'kr',
-  },
-  {
-    CountryName: 'Switzerland',
-    ISOCode: 'CHF',
-    Currency: 'Swiss Franc',
-    Symbol: 'CHF',
   },
   {
     CountryName: 'Syria',
@@ -1137,12 +1155,6 @@ export const countryCurrencyList = [
     Symbol: 'د.إ',
   },
   {
-    CountryName: 'United Kingdom',
-    ISOCode: 'GBP',
-    Currency: 'British Pound',
-    Symbol: '£',
-  },
-  {
     CountryName: 'United States',
     ISOCode: 'USD',
     Currency: 'United States Dollar',
@@ -1177,12 +1189,6 @@ export const countryCurrencyList = [
     ISOCode: 'VEF',
     Currency: 'Venezuelan Bolívar',
     Symbol: 'Bs',
-  },
-  {
-    CountryName: 'Vietnam',
-    ISOCode: 'VND',
-    Currency: 'Vietnamese Dong',
-    Symbol: '₫',
   },
   {
     CountryName: 'Yemen',
