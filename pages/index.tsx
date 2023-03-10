@@ -7,7 +7,7 @@ const Index = () => {
     <div>
       <Header />
       <Converter />
-      <PopularCurrency />
+      {/* <PopularCurrency /> */}
     </div>
   );
 };

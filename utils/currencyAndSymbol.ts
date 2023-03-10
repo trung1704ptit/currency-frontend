@@ -4,14 +4,14 @@ export const countryCurrencyList = [
     ISOCode: 'USD',
     Currency: 'United States Dollar',
     Symbol: '$',
-    Presented: true,
+    IsGroupLead: true,
   },
   {
     CountryName: 'Euro Member Countries',
     ISOCode: 'EUR',
     Currency: 'Euro',
     Symbol: '€',
-    Presented: true,
+    IsGroupLead: true,
   },
   {
     CountryName: 'United Kingdom',
@@ -102,7 +102,7 @@ export const countryCurrencyList = [
     ISOCode: 'XAF',
     Currency: 'Central African Cfa Franc BEAC',
     Symbol: 'FCFA',
-    Presented: true,
+    IsGroupLead: true,
   },
   {
     CountryName: 'Afghanistan',
@@ -127,6 +127,7 @@ export const countryCurrencyList = [
     ISOCode: 'EUR',
     Currency: 'Euro',
     Symbol: '€',
+    IsInGroup: true,
   },
   {
     CountryName: 'Angola',
@@ -157,6 +158,7 @@ export const countryCurrencyList = [
     ISOCode: 'EUR',
     Currency: 'Euro',
     Symbol: '€',
+    IsInGroup: true,
   },
   {
     CountryName: 'Azerbaijan',
@@ -199,6 +201,7 @@ export const countryCurrencyList = [
     ISOCode: 'EUR',
     Currency: 'Euro',
     Symbol: '€',
+    IsInGroup: true,
   },
   {
     CountryName: 'Belize',
@@ -319,6 +322,7 @@ export const countryCurrencyList = [
     ISOCode: 'EUR',
     Currency: 'Euro',
     Symbol: '€',
+    IsInGroup: true,
   },
   {
     CountryName: 'Cuba',
@@ -331,6 +335,7 @@ export const countryCurrencyList = [
     ISOCode: 'EUR',
     Currency: 'Euro',
     Symbol: '€',
+    IsInGroup: true,
   },
   {
     CountryName: 'Czech Republic',
@@ -409,6 +414,7 @@ export const countryCurrencyList = [
     ISOCode: 'EUR',
     Currency: 'Euro',
     Symbol: '€',
+    IsInGroup: true,
   },
   {
     CountryName: 'Eswatini',
@@ -433,12 +439,14 @@ export const countryCurrencyList = [
     ISOCode: 'EUR',
     Currency: 'Euro',
     Symbol: '€',
+    IsInGroup: true,
   },
   {
     CountryName: 'France',
     ISOCode: 'EUR',
     Currency: 'Euro',
     Symbol: '€',
+    IsInGroup: true,
   },
   {
     CountryName: 'Gabon',
@@ -463,6 +471,7 @@ export const countryCurrencyList = [
     ISOCode: 'EUR',
     Currency: 'Euro',
     Symbol: '€',
+    IsInGroup: true,
   },
   {
     CountryName: 'Ghana',
@@ -475,6 +484,7 @@ export const countryCurrencyList = [
     ISOCode: 'EUR',
     Currency: 'Euro',
     Symbol: '€',
+    IsInGroup: true,
   },
   {
     CountryName: 'Grenada',
@@ -553,6 +563,7 @@ export const countryCurrencyList = [
     ISOCode: 'EUR',
     Currency: 'Euro',
     Symbol: '€',
+    IsInGroup: true,
   },
   {
     CountryName: 'Israel',
@@ -565,6 +576,7 @@ export const countryCurrencyList = [
     ISOCode: 'EUR',
     Currency: 'Euro',
     Symbol: '€',
+    IsInGroup: true,
   },
   {
     CountryName: 'Ivory Coast',
@@ -613,6 +625,7 @@ export const countryCurrencyList = [
     ISOCode: 'EUR',
     Currency: 'Euro',
     Symbol: '€',
+    IsInGroup: true,
   },
   {
     CountryName: 'Kuwait',
@@ -637,6 +650,7 @@ export const countryCurrencyList = [
     ISOCode: 'EUR',
     Currency: 'Euro',
     Symbol: '€',
+    IsInGroup: true,
   },
   {
     CountryName: 'Lebanon',
@@ -673,12 +687,14 @@ export const countryCurrencyList = [
     ISOCode: 'EUR',
     Currency: 'Euro',
     Symbol: '€',
+    IsInGroup: true,
   },
   {
     CountryName: 'Luxembourg',
     ISOCode: 'EUR',
     Currency: 'Euro',
     Symbol: '€',
+    IsInGroup: true,
   },
   {
     CountryName: 'Madagascar',
@@ -715,6 +731,7 @@ export const countryCurrencyList = [
     ISOCode: 'EUR',
     Currency: 'Euro',
     Symbol: '€',
+    IsInGroup: true,
   },
   {
     CountryName: 'Marshall Islands',
@@ -757,6 +774,7 @@ export const countryCurrencyList = [
     ISOCode: 'EUR',
     Currency: 'Euro',
     Symbol: '€',
+    IsInGroup: true,
   },
   {
     CountryName: 'Mongolia',
@@ -769,6 +787,7 @@ export const countryCurrencyList = [
     ISOCode: 'EUR',
     Currency: 'Euro',
     Symbol: '€',
+    IsInGroup: true,
   },
   {
     CountryName: 'Morocco',
@@ -811,6 +830,7 @@ export const countryCurrencyList = [
     ISOCode: 'EUR',
     Currency: 'Euro',
     Symbol: '€',
+    IsInGroup: true,
   },
   {
     CountryName: 'New Zealand',
@@ -913,6 +933,7 @@ export const countryCurrencyList = [
     ISOCode: 'EUR',
     Currency: 'Euro',
     Symbol: '€',
+    IsInGroup: true,
   },
   {
     CountryName: 'Qatar',
@@ -967,6 +988,7 @@ export const countryCurrencyList = [
     ISOCode: 'EUR',
     Currency: 'Euro',
     Symbol: '€',
+    IsInGroup: true,
   },
   {
     CountryName: 'São Tomé and Príncipe',
@@ -1009,12 +1031,14 @@ export const countryCurrencyList = [
     ISOCode: 'EUR',
     Currency: 'Euro',
     Symbol: '€',
+    IsInGroup: true,
   },
   {
     CountryName: 'Slovenia',
     ISOCode: 'EUR',
     Currency: 'Euro',
     Symbol: '€',
+    IsInGroup: true,
   },
   {
     CountryName: 'Solomon Islands',
@@ -1045,6 +1069,7 @@ export const countryCurrencyList = [
     ISOCode: 'EUR',
     Currency: 'Euro',
     Symbol: '€',
+    IsInGroup: true,
   },
   {
     CountryName: 'Sri Lanka',
@@ -1183,6 +1208,7 @@ export const countryCurrencyList = [
     ISOCode: 'EUR',
     Currency: 'Euro',
     Symbol: '€',
+    IsInGroup: true,
   },
   {
     CountryName: 'Venezuela',

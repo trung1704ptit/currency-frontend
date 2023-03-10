@@ -36,17 +36,20 @@ const SelectItem = ({ item }) => {
 
 const DropdownSelect = (props: IDropdownType) => {
   const [list, setList] = useState(countryCurrencyList);
+  const [value, setValue] = useState(props.defaultValue);
 
   useEffect(() => {
     handleSearch('');
   }, []);
 
-  const handleChange = (value: string[]) => {
-    console.log(`selected ${value}`);
+  const handleChange = (value: string) => {
+    const val = value.slice(0, 3)
+    props.handleChange(val);
+    setValue(val);
   };
 
   const handleSearch = (input) => {
-    const presentedList = [];
+    const GroupLeadList = [];
 
     const inputText = input.toLowerCase();
     let filter = countryCurrencyList.filter((item) => {
@@ -58,18 +61,18 @@ const DropdownSelect = (props: IDropdownType) => {
         Currency.indexOf(inputText) > -1 ||
         CountryName.indexOf(inputText) > -1
       ) {
-        if (item.Presented) {
-          presentedList.push(item.ISOCode);
+        if (item.IsGroupLead) {
+          GroupLeadList.push(item.ISOCode);
         }
         return true;
       }
     });
-    if (presentedList.length) {
-      presentedList.forEach((presentItem) => {
+    if (GroupLeadList.length) {
+      GroupLeadList.forEach((gItem) => {
         filter = filter.filter(
           (item) =>
-            (item.ISOCode == presentItem && item.Presented) ||
-            item.ISOCode !== presentItem,
+            (item.ISOCode == gItem && item.IsGroupLead) ||
+            item.ISOCode !== gItem,
         );
       });
     }
@@ -89,23 +92,27 @@ const DropdownSelect = (props: IDropdownType) => {
         showSearch
         style={{ width: '100%' }}
         placeholder="select one currency"
-        defaultValue={[props.defaultValue]}
         onChange={handleChange}
         onSearch={handleSearch}
         onSelect={onSelect}
+        filterOption={() => true}
         optionLabelProp="label"
         size="large"
+        defaultValue={value}
+        value={value}
       >
-        {list.map((item) => (
-          <Option
-            value={item.ISOCode + '_' + item.CountryName}
-            key={item.ISOCode + item.CountryName}
-            label={<SelectItem item={item} />}
-            style={{ minHeight: '45px', lineHeight: '34px' }}
-          >
-            <SelectItem item={item} />
-          </Option>
-        ))}
+        {list.map((item, index) => {
+          return (
+            <Option
+              value={item.ISOCode + (item.IsInGroup ? `_${index}` : '')}
+              key={item.ISOCode + item.CountryName}
+              label={<SelectItem item={item} />}
+              style={{ minHeight: '45px', lineHeight: '34px' }}
+            >
+              <SelectItem item={item} />
+            </Option>
+          );
+        })}
       </Select>
     </InputWrapper>
   );
