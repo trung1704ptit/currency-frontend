@@ -8,10 +8,10 @@ const AmountInput = (props) => {
       <Text strong>Amount</Text>
       <Input
         prefix="￥"
-        suffix="RMB"
         size="large"
         type="number"
         onChange={props.handleChange}
+        defaultValue={props.defaultValue}
       />
     </InputWrapper>
   );

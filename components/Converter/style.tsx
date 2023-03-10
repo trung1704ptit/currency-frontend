@@ -39,7 +39,7 @@ export const InputWrapper = styled.div`
   /* Firefox */
   input[type='number'] {
     -moz-appearance: textfield;
-    font-size: 24px;
+    font-size: 22px;
   }
 `;
 

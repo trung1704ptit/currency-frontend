@@ -1,44 +1,56 @@
 import React, { useState } from 'react';
-import { useRouter } from 'next/router'
-import { Row, Col, Button } from 'antd';
+import { useRouter } from 'next/router';
+import { Row, Col } from 'antd';
 import Text from 'antd/lib/typography/Text';
 import Container from '../Container';
 import AmountInput from './AmountInput';
 import DropdownSelect from '../CurrencyDropdownSelect';
-import { ConvertButtonWrapper, Section, Wrapper, Tooltip, ConvertPair } from './style';
+import {
+  ConvertButtonWrapper,
+  Section,
+  Wrapper,
+  Tooltip,
+  ConvertPair,
+} from './style';
+import { IConverter, IResult } from './types';
 
-const Converter = () => {
+const Converter = (props: IConverter) => {
   const router = useRouter();
 
-  const [state, setState] = useState({
-    amount: 1,
-    from: 'USD',
-    to: 'EUR'
-  }) 
+  const [state, setState] = useState<IResult>({
+    from: props.data.from,
+    to: props.data.to,
+    amount: props.data.amount,
+    pairName: props.data.pairName,
+    price: props.data.price,
+    dayChanged: props.data.dayChanged,
+    dayChangedByPercent: props.data.dayChangedByPercent,
+    dayChangedStatus: props.data.dayChangedStatus,
+    lastUpdated: props.data.lastUpdated,
+  });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
-    setState({ ...state, amount: Number(value) })
-  }
+    setState({ ...state, amount: Number(value) });
+    router.push({
+      query: { amount: value, from: state.from, to: state.to },
+    });
+  };
 
   const handleChangeFrom = (val) => {
-    console.log('---from', val)
-    setState({ ...state, from: val});
+    setState({ ...state, from: val });
     router.push({
-      pathname: '/',
       query: { amount: state.amount, from: val, to: state.to },
     });
-  }
+  };
 
-  const handleChangeTo = val => {
-    setState({ ...state, to: val})
-    console.log('---to ', val)
+  const handleChangeTo = (val) => {
+    setState({ ...state, to: val });
 
     router.push({
-      pathname: '/',
-      query: { amount: state.amount, to: val, from: state.to },
+      query: { amount: state.amount, from: state.to, to: val },
     });
-  }
+  };
 
   return (
     <Section>
@@ -46,22 +58,42 @@ const Converter = () => {
         <Wrapper>
           <Row gutter={[24, 24]}>
             <Col md={8} xs={24}>
-              <AmountInput handleChange={handleChange} />
+              <AmountInput
+                handleChange={handleChangeInput}
+                defaultValue={state.amount}
+              />
             </Col>
             <Col md={8} xs={24}>
-              <DropdownSelect label="From" defaultValue={state.from} handleChange={handleChangeFrom}/>
+              <DropdownSelect
+                label="From"
+                defaultValue={state.from}
+                handleChange={handleChangeFrom}
+              />
             </Col>
 
             <Col md={8} xs={24}>
-              <DropdownSelect label="To" defaultValue={state.to} handleChange={handleChangeTo}/>
+              <DropdownSelect
+                label="To"
+                defaultValue={state.to}
+                handleChange={handleChangeTo}
+              />
             </Col>
           </Row>
           <ConvertButtonWrapper>
             <div>
-            <ConvertPair>
-              {state.amount} {state.from} = 1.3750 {state.to}
-            </ConvertPair>
-            <Text type="secondary">Last updated 20h 20 30/3/2023</Text>
+              <ConvertPair>
+                {state.amount} {state.from} = {(state.price * state.amount).toPrecision(5)}{' '}
+                {state.to}
+              </ConvertPair>
+              {state.amount !== 1 ? (
+                <div>
+                  <Text>
+                    1 {state.from} = {state.price} {state.to}
+                  </Text>
+                </div>
+              ) : null}
+
+              <Text type="secondary">Last updated 20h 20 30/3/2023</Text>
             </div>
 
             <Tooltip>
