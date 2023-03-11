@@ -10,7 +10,7 @@ import { IDropdownType } from './types';
 
 const { Option } = Select;
 
-const SelectItem = ({ item }) => {
+const SelectItem = ({ item, isShowCountryName }) => {
   return (
     <div>
       <Space>
@@ -27,7 +27,9 @@ const SelectItem = ({ item }) => {
           <span>
             {item.ISOCode} - {item.Currency}
           </span>
-          <div style={{ fontSize: '12px' }}>({item.CountryName})</div>
+          {isShowCountryName ? (
+            <div style={{ fontSize: '12px' }}>({item.CountryName})</div>
+          ) : null}
         </div>
       </Space>
     </div>
@@ -106,10 +108,10 @@ const DropdownSelect = (props: IDropdownType) => {
             <Option
               value={item.ISOCode + (item.IsInGroup ? `_${index}` : '')}
               key={item.ISOCode + item.CountryName}
-              label={<SelectItem item={item} />}
+              label={<SelectItem item={item} isShowCountryName={false} />}
               style={{ minHeight: '45px', lineHeight: '34px' }}
             >
-              <SelectItem item={item} />
+              <SelectItem item={item} isShowCountryName={true} />
             </Option>
           );
         })}
