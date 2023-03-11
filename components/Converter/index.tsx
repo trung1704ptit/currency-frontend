@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import { Row, Col } from 'antd';
-import { Typography } from 'antd'
+import { Typography } from 'antd';
 
 import Container from '../Container';
 import AmountInput from './AmountInput';
+import { countryCurrencyList } from '../../utils/currencyAndSymbol';
 import DropdownSelect from '../CurrencyDropdownSelect';
 import {
   ConvertButtonWrapper,
@@ -16,6 +17,12 @@ import {
 import { IConverter, IResult } from './types';
 
 const { Text } = Typography;
+
+const getCurrencyInfo = (name) => {
+  return countryCurrencyList.find(
+    (item) => item.ISOCode.toLowerCase() === name.toLowerCase(),
+  );
+};
 
 const Converter = (props: IConverter) => {
   const router = useRouter();
@@ -88,13 +95,13 @@ const Converter = (props: IConverter) => {
                 {state.amount} {state.from} ={' '}
                 {(state.price * state.amount).toPrecision(6)} {state.to}
               </ConvertPair>
-              {state.amount !== 1 ? (
-                <div>
-                  <Text>
-                    1 {state.from} = {state.price} {state.to}
-                  </Text>
-                </div>
-              ) : null}
+
+              <div>
+                <Text>
+                  1 {getCurrencyInfo(state.from).Currency} = {state.price}{' '}
+                  {getCurrencyInfo(state.to).Currency}
+                </Text>
+              </div>
 
               <Text type="secondary">
                 Last updated: {new Date(state.lastUpdated).toLocaleString()}

@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import { PopularCurrency } from '../components/PopularCurrency';
 import api from '../api';
 import { IResult } from '../components/Converter/types';
+import Footer from '../components/Footer';
 
 const Index = (props) => {
   return (
@@ -10,6 +11,7 @@ const Index = (props) => {
       <Header />
       <Converter data={props.converter} />
       <PopularCurrency />
+      <Footer />
     </div>
   );
 };

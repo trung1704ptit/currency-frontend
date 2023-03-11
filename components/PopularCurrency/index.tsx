@@ -52,6 +52,15 @@ export const PopularCurrency = () => {
         <Col xs={24} sm={12} md={8} lg={6}>
           <CurrencyBlock pairName="JPY/SGD" />
         </Col>
+        <Col xs={24} sm={12} md={8} lg={6}>
+          <CurrencyBlock pairName="JPY/SGD" />
+        </Col>
+        <Col xs={24} sm={12} md={8} lg={6}>
+          <CurrencyBlock pairName="JPY/SGD" />
+        </Col>
+        <Col xs={24} sm={12} md={8} lg={6}>
+          <CurrencyBlock pairName="TWD/SGD" />
+        </Col>
       </Row>
     </Container>
   );
