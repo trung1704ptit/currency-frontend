@@ -7,7 +7,7 @@ const Index = (props) => {
     <div>
       <Header />
       <Converter data={props.converter} />
-      {/* <PopularCurrency /> */}
+      <PopularCurrency />
     </div>
   );
 };
@@ -32,7 +32,7 @@ export async function getServerSideProps(context) {
         dayChanged: 0.000002,
         dayChangedByPercent: 0.00012,
         dayChangedStatus: '-',
-        lastUpdated: new Date().getTime(),
+        lastUpdated: '2023-03-10T10:21:44.135Z',
       }
     },
   }

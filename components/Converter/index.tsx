@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import { Row, Col } from 'antd';
-import Text from 'antd/lib/typography/Text';
+import { Typography } from 'antd'
+
 import Container from '../Container';
 import AmountInput from './AmountInput';
 import DropdownSelect from '../CurrencyDropdownSelect';
@@ -13,6 +14,8 @@ import {
   ConvertPair,
 } from './style';
 import { IConverter, IResult } from './types';
+
+const { Text } = Typography;
 
 const Converter = (props: IConverter) => {
   const router = useRouter();
@@ -82,8 +85,8 @@ const Converter = (props: IConverter) => {
           <ConvertButtonWrapper>
             <div>
               <ConvertPair>
-                {state.amount} {state.from} = {(state.price * state.amount).toPrecision(5)}{' '}
-                {state.to}
+                {state.amount} {state.from} ={' '}
+                {(state.price * state.amount).toPrecision(5)} {state.to}
               </ConvertPair>
               {state.amount !== 1 ? (
                 <div>
@@ -93,13 +96,17 @@ const Converter = (props: IConverter) => {
                 </div>
               ) : null}
 
-              <Text type="secondary">Last updated 20h 20 30/3/2023</Text>
+              <Text type="secondary">
+                Last updated: {new Date(state.lastUpdated).toLocaleString()}
+              </Text>
             </div>
 
             <Tooltip>
-              We use the mid-market rate for our Converter. This is for
-              informational purposes only. You won’t receive this rate when
-              sending money.
+              <Text>
+                We use the mid-market rate for our Converter. This is for
+                informational purposes only. You won’t receive this rate when
+                sending money.
+              </Text>
             </Tooltip>
           </ConvertButtonWrapper>
         </Wrapper>

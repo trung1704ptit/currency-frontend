@@ -1,12 +1,17 @@
 import { Row, Col } from 'antd';
+import { Typography } from 'antd';
 import Container from '../Container';
 import CurrencyBlock from './CurrencyBlock';
 import { PopularCurrencyTitle } from './style';
 
+const { Title } = Typography;
+
 export const PopularCurrency = () => {
   return (
     <Container>
-      <PopularCurrencyTitle>Popular Currency Pairings</PopularCurrencyTitle>
+      <PopularCurrencyTitle>
+        <Title level={2}>Popular Currency Pairings</Title>
+      </PopularCurrencyTitle>
       <Row gutter={[16, 16]}>
         <Col xs={24} sm={12} md={8} lg={6}>
           <CurrencyBlock pairName="USD/SGD" />
@@ -43,6 +48,9 @@ export const PopularCurrency = () => {
         </Col>
         <Col xs={24} sm={12} md={8} lg={6}>
           <CurrencyBlock pairName="TRY/SGD" />
+        </Col>
+        <Col xs={24} sm={12} md={8} lg={6}>
+          <CurrencyBlock pairName="JPY/SGD" />
         </Col>
       </Row>
     </Container>

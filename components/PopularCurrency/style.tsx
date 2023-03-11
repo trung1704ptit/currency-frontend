@@ -1,10 +1,9 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import styled from 'styled-components';
 
-export const PopularCurrencyTitle = styled.h3`
+export const PopularCurrencyTitle = styled.div`
   text-align: center;
-  font-weight: 600;
-  font-size: 2rem;
+  margin-bottom: 40px;
 `;
 
 export const CurrencyBlockWrapper = styled.div`
