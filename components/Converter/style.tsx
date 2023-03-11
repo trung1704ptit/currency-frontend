@@ -10,7 +10,7 @@ export const Wrapper = styled.main`
   background: #fff;
 
   @media only screen and (min-width: 768px) {
-    padding: 70px 48px;
+    padding: 50px 48px;
   }
 `;
 
@@ -47,17 +47,20 @@ export const Section = styled.div`
   max-width: 1200px px;
   position: relative;
   padding: 70px 0;
+  background: #65f3da57;
+
   @media only screen and (min-width: 768px) {
-    padding: 120px 0px;
+    padding: 150px 0px;
+    background: url("/head-background.jpg");
   }
 `;
 
 export const ConvertButtonWrapper = styled.div`
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   justify-content: space-between;
   margin-top: 20px;
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 992px) {
     flex-direction: row;
   }
 `;

@@ -4,6 +4,7 @@ import styled from 'styled-components';
 export const PopularCurrencyTitle = styled.div`
   text-align: center;
   margin-bottom: 40px;
+  margin-top: 40px;
 `;
 
 export const CurrencyBlockWrapper = styled.div`
