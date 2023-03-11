@@ -23,7 +23,7 @@ const Converter = (props: IConverter) => {
   const [state, setState] = useState<IResult>({
     from: props.data.from,
     to: props.data.to,
-    amount: props.data.amount,
+    amount: props.data.amount || 1,
     pairName: props.data.pairName,
     price: props.data.price,
     dayChanged: props.data.dayChanged,
@@ -86,7 +86,7 @@ const Converter = (props: IConverter) => {
             <div>
               <ConvertPair>
                 {state.amount} {state.from} ={' '}
-                {(state.price * state.amount).toPrecision(5)} {state.to}
+                {(state.price * state.amount).toPrecision(6)} {state.to}
               </ConvertPair>
               {state.amount !== 1 ? (
                 <div>

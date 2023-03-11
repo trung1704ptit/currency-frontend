@@ -1,12 +1,13 @@
 export interface IDropdownType {
-    label: string;
-    defaultValue?: string
+  label: string;
+  defaultValue?: string;
 }
 
 export interface IResult {
+  id?: string;
   from: string;
   to: string;
-  amount: number;
+  amount?: number;
   pairName: string;
   price: number;
   dayChanged: number;
@@ -16,5 +17,5 @@ export interface IResult {
 }
 
 export interface IConverter {
-    data: any
+  data: any;
 }
