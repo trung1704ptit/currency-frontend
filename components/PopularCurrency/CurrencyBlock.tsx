@@ -60,7 +60,7 @@ const CurrencyBlock = ({ pairName }: CurrencyInputType) => {
 
         <CurrencyChanged changedStatus={dayChangedStatus}>
           {dayChangedStatusIcon}
-          {data.dayChanged} ({data.dayChangedByPercent}%){' '}
+          {data.dayChanged} ({data.dayChangedStatus}{data.dayChangedByPercent}%){' '}
           <DailyText>Daily</DailyText>
         </CurrencyChanged>
         <CurrencyLink href="/details">
