@@ -1,9 +1,9 @@
 import Converter from '../components/Converter';
 import Header from '../components/Header';
 import { PopularCurrency } from '../components/PopularCurrency';
-import api from '../api';
 import { IResult } from '../components/Converter/types';
 import Footer from '../components/Footer';
+import { getCurrencyByBase } from '../utils/httpUtils';
 
 const Index = (props) => {
   return (
@@ -20,15 +20,33 @@ export default Index;
 
 export async function getServerSideProps(context) {
   const query = context.query;
-  const from = query.from || 'USD';
-  const to = query.to || 'SGD';
+  const from = query.from;
+  const to = query.to;
   let data: IResult | null = null;
 
   if (from && to) {
-    const res = await api.get('http://localhost:5000/v1/currency', {
-      params: { from, to },
-    });
-    data = res.data;
+    if (!query.amount) {
+      return {
+        redirect: {
+          destination: context.resolvedUrl + '&amount=1',
+          permanent: false,
+        },
+      };
+    }
+    const res = await getCurrencyByBase({ from, to });
+    if (res && res?.mapping) {
+      data = res.mapping[0];
+    }
+    if (data) {
+      data.lastUpdated = res.lastUpdated;
+    }
+  } else {
+    return {
+      redirect: {
+        destination: '/?amount=1&from=USD&to=SGD',
+        permanent: false,
+      },
+    };
   }
 
   if (!data) {
@@ -37,7 +55,7 @@ export async function getServerSideProps(context) {
         destination: '/not-found',
         permanent: false,
       },
-    }
+    };
   }
 
   return {
@@ -51,7 +69,7 @@ export async function getServerSideProps(context) {
         dayChangedByPercent: data.dayChangedByPercent,
         dayChangedStatus: data.dayChangedStatus,
         lastUpdated: data.lastUpdated,
-      }
+      },
     },
-  }
+  };
 }

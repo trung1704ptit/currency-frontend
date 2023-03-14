@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { Row, Col } from 'antd';
 import { Typography } from 'antd';
-
 import Container from '../Container';
 import AmountInput from './AmountInput';
 import { countryCurrencyList } from '../../utils/currencyAndSymbol';
@@ -58,9 +57,13 @@ const Converter = (props: IConverter) => {
     setState({ ...state, to: val });
 
     router.push({
-      query: { amount: state.amount, from: state.to, to: val },
+      query: { amount: state.amount, from: state.from, to: val },
     });
   };
+
+  useEffect(() => {
+    setState({ ...state, ...props.data });
+  }, [props.data]);
 
   return (
     <Section>
