@@ -16,20 +16,20 @@ import {
 } from './style';
 import type { CurrencyInputType, ICurrencyProps } from './type';
 
-const CurrencyBlock = ({ pairName }: CurrencyInputType) => {
-  const [data, setData] = useState<ICurrencyProps>();
+const CurrencyBlock = ({ currencyData }: CurrencyInputType) => {
+  const [data, setData] = useState<ICurrencyProps>(currencyData);
 
   useEffect(() => {
-    // const socket = socketIOClient(ENDPOINT);
+    setData(currencyData);
     const socket = io('http://localhost:5000', {
       query: {
-        pairName,
+        pairName: currencyData.pairName,
       },
     });
-    socket.on(pairName, (res) => {
+    socket.on(currencyData.pairName, (res) => {
       setData(res);
     });
-  }, []);
+  }, [currencyData]);
 
   if (data) {
     let dayChangedStatus: string = 'unset';

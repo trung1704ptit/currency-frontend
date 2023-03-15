@@ -1,7 +1,6 @@
 import Converter from '../components/Converter';
 import Header from '../components/Header';
 import { PopularCurrency } from '../components/PopularCurrency';
-import { IResult } from '../components/Converter/types';
 import Footer from '../components/Footer';
 import { getCurrencyByBase } from '../utils/httpUtils';
 
@@ -9,8 +8,8 @@ const Index = (props) => {
   return (
     <div>
       <Header />
-      <Converter data={props.converter} />
-      <PopularCurrency />
+      <Converter data={props.converterData} />
+      <PopularCurrency popularData={props.popularData} />
       <Footer />
     </div>
   );
@@ -22,7 +21,7 @@ export async function getServerSideProps(context) {
   const query = context.query;
   const from = query.from;
   const to = query.to;
-  let data: IResult | null = null;
+  let data: any
 
   if (from && to) {
     if (!query.amount) {
@@ -33,12 +32,9 @@ export async function getServerSideProps(context) {
         },
       };
     }
-    const res = await getCurrencyByBase({ from, to });
+    const res = await getCurrencyByBase({ from });
     if (res && res?.mapping) {
-      data = res.mapping[0];
-    }
-    if (data) {
-      data.lastUpdated = res.lastUpdated;
+      data = res.mapping;
     }
   } else {
     return {
@@ -58,18 +54,21 @@ export async function getServerSideProps(context) {
     };
   }
 
+  const currencySelected = data.find(item => item.to === to);
+
   return {
     props: {
-      converter: {
-        from: data.from,
-        to: data.to,
-        pairName: data.pairName,
-        price: data.price,
-        dayChanged: data.dayChanged,
-        dayChangedByPercent: data.dayChangedByPercent,
-        dayChangedStatus: data.dayChangedStatus,
-        lastUpdated: data.lastUpdated,
+      converterData: {
+        from: currencySelected.from,
+        to: currencySelected.to,
+        pairName: currencySelected.pairName,
+        price: currencySelected.price,
+        dayChanged: currencySelected.dayChanged,
+        dayChangedByPercent: currencySelected.dayChangedByPercent,
+        dayChangedStatus: currencySelected.dayChangedStatus,
+        lastUpdated: currencySelected?.lastUpdated || null,
       },
+      popularData: data
     },
   };
 }

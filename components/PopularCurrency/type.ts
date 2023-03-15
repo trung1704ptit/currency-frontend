@@ -17,8 +17,10 @@ export interface ICurrencyProps {
   from: string;
   to: string;
   lastUpdated: Date;
+  id?: string;
+  _id?: string;
 }
 
 export type CurrencyInputType = {
-  pairName: string;
+  currencyData: ICurrencyProps;
 };

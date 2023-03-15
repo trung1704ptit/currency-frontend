@@ -41,9 +41,9 @@ const Converter = (props: IConverter) => {
   const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
     setState({ ...state, amount: Number(value) });
-    router.push({
-      query: { amount: value, from: state.from, to: state.to },
-    });
+    // router.push({
+    //   query: { amount: value, from: state.from, to: state.to },
+    // });
   };
 
   const handleChangeFrom = (val) => {
