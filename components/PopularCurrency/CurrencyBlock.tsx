@@ -21,7 +21,7 @@ const CurrencyBlock = ({ currencyData }: CurrencyInputType) => {
 
   useEffect(() => {
     setData(currencyData);
-    const socket = io(process.env.API_CONTENT, {
+    const socket = io(process.env.NEXT_PUBLIC_API_CONTENT, {
       query: {
         pairName: currencyData.pairName,
       },

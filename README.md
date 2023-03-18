@@ -29,3 +29,7 @@ yarn start
 ```
 
 https://levelup.gitconnected.com/lets-create-a-project-with-nextjs-antd-and-deploy-with-now-sh-e38772348312
+
+
+# Build with PM2:
+pm2 start npm --name "next" -- start
