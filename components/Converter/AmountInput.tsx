@@ -7,7 +7,7 @@ const AmountInput = (props) => {
     <InputWrapper>
       <Text strong>Amount</Text>
       <Input
-        prefix="￥"
+        prefix={props.fromDetail.Symbol}
         size="large"
         type="number"
         onChange={props.handleChange}

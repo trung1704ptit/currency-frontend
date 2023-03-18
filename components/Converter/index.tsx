@@ -65,6 +65,9 @@ const Converter = (props: IConverter) => {
     setState({ ...state, ...props.data });
   }, [props.data]);
 
+  const fromDetail = getCurrencyInfo(state.from);
+  const toDetail =  getCurrencyInfo(state.to);
+
   return (
     <Section>
       <Container>
@@ -74,6 +77,7 @@ const Converter = (props: IConverter) => {
               <AmountInput
                 handleChange={handleChangeInput}
                 defaultValue={state.amount}
+                fromDetail={fromDetail}
               />
             </Col>
             <Col md={8} xs={24}>
@@ -101,8 +105,8 @@ const Converter = (props: IConverter) => {
 
               <div>
                 <Text>
-                  1 {getCurrencyInfo(state.from).Currency} = {state.price}{' '}
-                  {getCurrencyInfo(state.to).Currency}
+                  1 {fromDetail.Currency} = {state.price}{' '}
+                  {toDetail.Currency}
                 </Text>
               </div>
 
