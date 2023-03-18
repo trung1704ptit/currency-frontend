@@ -17,11 +17,18 @@ const Index = (props) => {
 
 export default Index;
 
+const defaultRedirect = {
+  redirect: {
+    destination: '/?amount=1&from=USD&to=EUR',
+    permanent: false,
+  },
+};
+
 export async function getServerSideProps(context) {
   const query = context.query;
   const from = query.from;
   const to = query.to;
-  let data: any
+  let data: any;
 
   if (from && to) {
     if (!query.amount) {
@@ -37,38 +44,30 @@ export async function getServerSideProps(context) {
       data = res.mapping;
     }
   } else {
-    return {
-      redirect: {
-        destination: '/?amount=1&from=USD&to=SGD',
-        permanent: false,
-      },
-    };
+    return defaultRedirect;
   }
 
   if (!data) {
+    return defaultRedirect;
+  }
+
+  const currencySelected = data.find((item) => item.to === to);
+  if (currencySelected) {
     return {
-      redirect: {
-        destination: '/not-found',
-        permanent: false,
+      props: {
+        converterData: {
+          from: currencySelected.from,
+          to: currencySelected.to,
+          pairName: currencySelected.pairName,
+          price: currencySelected.price,
+          dayChanged: currencySelected.dayChanged,
+          dayChangedByPercent: currencySelected.dayChangedByPercent,
+          dayChangedStatus: currencySelected.dayChangedStatus,
+          lastUpdated: currencySelected?.lastUpdated || null,
+        },
+        popularData: data,
       },
     };
   }
-
-  const currencySelected = data.find(item => item.to === to);
-
-  return {
-    props: {
-      converterData: {
-        from: currencySelected.from,
-        to: currencySelected.to,
-        pairName: currencySelected.pairName,
-        price: currencySelected.price,
-        dayChanged: currencySelected.dayChanged,
-        dayChangedByPercent: currencySelected.dayChangedByPercent,
-        dayChangedStatus: currencySelected.dayChangedStatus,
-        lastUpdated: currencySelected?.lastUpdated || null,
-      },
-      popularData: data
-    },
-  };
+  return defaultRedirect;
 }
