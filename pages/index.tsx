@@ -47,8 +47,8 @@ export async function getServerSideProps(context) {
       };
     }
     const res = await getCurrencyByBase({ from });
-    if (res && res?.mapping) {
-      data = res.mapping;
+    if (res && res?.rates) {
+      data = res.rates;
     } else {
       return notFoundRedirect;
     }
