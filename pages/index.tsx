@@ -24,6 +24,13 @@ const defaultRedirect = {
   },
 };
 
+const notFoundRedirect = {
+  redirect: {
+    destination: '/not-found',
+    permanent: false,
+  },
+};
+
 export async function getServerSideProps(context) {
   const query = context.query;
   const from = query.from;
@@ -42,14 +49,16 @@ export async function getServerSideProps(context) {
     const res = await getCurrencyByBase({ from });
     if (res && res?.mapping) {
       data = res.mapping;
+    } else {
+      return notFoundRedirect;
     }
   } else {
     return defaultRedirect;
   }
 
-  if (!data) {
-    return defaultRedirect;
-  }
+  // not from or not to => redirect to defaultRedirect
+  // have both form and to, but not amount => redirect to DefaultRedirect.
+  // have from, to, amount => query => if have no data => redirect to /not-found
 
   const currencySelected = data.find((item) => item.to === to);
   if (currencySelected) {
