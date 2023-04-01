@@ -10,13 +10,13 @@ export const HeaderInner = styled.div`
   align-items: center;
 `
 
-export const Logo = styled.div`
+export const Logo = styled.a`
   img {
-    width: 120px;
+    width: 140px;
   }
   @media only screen and (min-width: 768px) {
     img {
-      width: 140px;
+      width: 220px;
     }
   }
 `

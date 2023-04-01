@@ -8,8 +8,8 @@ const Header = () => {
     <HeaderWrapper>
       <Container>
         <HeaderInner>
-          <Logo>
-            <img src="/logo.webp" />
+          <Logo href='/'>
+            <img src="/logo.png" />
           </Logo>
           <RightSide>
             <Space>
