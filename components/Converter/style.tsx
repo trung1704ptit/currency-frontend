@@ -78,7 +78,7 @@ export const ConvertButtonWrap = styled.div`
 
 export const Tooltip = styled.div`
   padding: 16px;
-  background: rgb(242, 247, 254);
+  background: #2dc29529;
   max-width: 480px;
   margin-top: 20px;
 `;
