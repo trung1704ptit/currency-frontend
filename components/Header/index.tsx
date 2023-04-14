@@ -1,4 +1,4 @@
-import { LoginOutlined, LogoutOutlined, UserAddOutlined, UserOutlined } from '@ant-design/icons';
+import { UserAddOutlined } from '@ant-design/icons';
 import { Button, Space } from 'antd';
 import Container from '../Container';
 import { HeaderInner, HeaderWrapper, Logo, RightSide } from './style';
@@ -13,10 +13,7 @@ const Header = () => {
           </Logo>
           <RightSide>
             <Space>
-              <Button size='middle' icon={<LoginOutlined />}>
-                Login
-              </Button>
-              <Button type="primary" size="middle" icon={<UserAddOutlined />}>
+              <Button type="primary" size="large" icon={<UserAddOutlined />}>
                 Register
               </Button>
             </Space>

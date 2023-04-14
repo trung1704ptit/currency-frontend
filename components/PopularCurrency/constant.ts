@@ -83,4 +83,8 @@ export const biggestEconomics = [
     ISOCode: 'AED',
     name: 'United Arab Emirates',
   },
+  {
+    ISOCode: 'VND',
+    name: 'Vietnam',
+  }
 ];
