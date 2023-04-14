@@ -14,6 +14,7 @@ import {
   ConvertPair,
 } from './style';
 import { IConverter, IResult } from './types';
+import { round } from '../utils';
 
 const { Text } = Typography;
 
@@ -100,7 +101,7 @@ const Converter = (props: IConverter) => {
             <div>
               <ConvertPair>
                 {state.amount} {state.from} ={' '}
-                {(state.price * state.amount).toPrecision(6)} {state.to}
+                {round(state.price * state.amount, 4)} {state.to}
               </ConvertPair>
 
               <div>
@@ -118,8 +119,7 @@ const Converter = (props: IConverter) => {
             <Tooltip>
               <Text>
                 We use the mid-market rate for our Converter. This is for
-                informational purposes only. You won’t receive this rate when
-                sending money.
+                informational purposes only. This data belong to apiup.org.
               </Text>
             </Tooltip>
           </ConvertButtonWrapper>

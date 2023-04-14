@@ -1,17 +1,17 @@
 import { ReactElement, useEffect, useState } from 'react';
 import { io } from 'socket.io-client';
-import {
-  ArrowRightOutlined
-} from '@ant-design/icons';
+// import {
+//   ArrowRightOutlined
+// } from '@ant-design/icons';
 import { ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons';
 
 import {
   CurrencyBlockWrapper,
   CurrencyChanged,
-  CurrencyLink,
+  // CurrencyLink,
   CurrencyPrice,
   CurrencyText,
-  CurrencyViewMoreText,
+  // CurrencyViewMoreText,
   DailyText,
 } from './style';
 import type { CurrencyInputType, ICurrencyProps } from './type';
@@ -63,11 +63,10 @@ const CurrencyBlock = ({ currencyData }: CurrencyInputType) => {
           {data.dayChanged} ({data.dayChangedStatus}{data.dayChangedByPercent}%){' '}
           <DailyText>Daily</DailyText>
         </CurrencyChanged>
-        <CurrencyLink href="/details">
+        {/* <CurrencyLink href="/details">
           <CurrencyViewMoreText>View more</CurrencyViewMoreText>{' '}
-          {/* <FontAwesomeIcon icon={faArrowRight} style={{ fontSize: '13px' }} /> */}
           <ArrowRightOutlined style={{ fontSize: '13px' }} />
-        </CurrencyLink>
+        </CurrencyLink> */}
       </CurrencyBlockWrapper>
     );
   }
