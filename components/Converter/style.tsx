@@ -51,7 +51,7 @@ export const Section = styled.div`
 
   @media only screen and (min-width: 768px) {
     padding: 150px 0px;
-    background: url("/head-background.jpg");
+    background: url("/images/head-background.jpg");
   }
 `;
 

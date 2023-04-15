@@ -9,7 +9,7 @@ const Header = () => {
       <Container>
         <HeaderInner>
           <Logo href='/'>
-            <img src="/logo.png" />
+            <img src="/images/logo.png" />
           </Logo>
           <RightSide>
             <Space>
