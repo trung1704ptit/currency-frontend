@@ -47,7 +47,7 @@ export const Section = styled.div`
   max-width: 1200px px;
   position: relative;
   padding: 70px 0;
-  background: #65f3da57;
+  background: #0CB688;
 
   @media only screen and (min-width: 768px) {
     padding: 150px 0px;
