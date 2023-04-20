@@ -8,14 +8,16 @@ const Header = () => {
     <HeaderWrapper>
       <Container>
         <HeaderInner>
-          <Logo href='/'>
+          <Logo href="/">
             <img src="/images/logo.png" />
           </Logo>
           <RightSide>
             <Space>
-              <Button type="primary" size="large" icon={<UserAddOutlined />}>
-                Register
-              </Button>
+              <a href="https://rapidapi.com/trung1704ptit/api/currency-converter228/pricing">
+                <Button type="primary" size="large" icon={<UserAddOutlined />}>
+                  Register
+                </Button>
+              </a>
             </Space>
           </RightSide>
         </HeaderInner>
