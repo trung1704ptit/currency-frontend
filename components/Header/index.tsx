@@ -1,4 +1,4 @@
-import { UserAddOutlined } from '@ant-design/icons';
+import { DoubleRightOutlined } from '@ant-design/icons';
 import { Button, Space } from 'antd';
 import Container from '../Container';
 import { HeaderInner, HeaderWrapper, Logo, RightSide } from './style';
@@ -14,8 +14,8 @@ const Header = () => {
           <RightSide>
             <Space>
               <a href="https://rapidapi.com/trung1704ptit/api/currency-converter228/pricing">
-                <Button type="primary" size="large" icon={<UserAddOutlined />}>
-                  Register
+                <Button type="primary" size="large" icon={<DoubleRightOutlined />}>
+                  Try It Now
                 </Button>
               </a>
             </Space>
